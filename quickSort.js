@@ -49,8 +49,8 @@ var quickSort = function(arr, key) {
     var left = [], right = [];
     var pivotIndex = Math.floor(arr.length / 2);
     var pivot = arr.splice(pivotIndex, 1)[0];
-    for (var i = 0; i < arr.length, i++) {
-        if (!key && ((arr[i] < pivot) || (arr[i] == pivot && i < pivotIndex)) || (key && (arr[i][key] < pivot[key] || (arr[i][key] == pivot[key] && i < pivotIndex)))) {
+    for (var i = 0; i < arr.length; i++) {
+        if ((!key && ((arr[i] < pivot) || (arr[i] == pivot && i < pivotIndex))) || (key && (arr[i][key] < pivot[key] || (arr[i][key] == pivot[key] && i < pivotIndex)))) {
             left.push(arr[i]);
         } else {
             right.push(arr[i]);
