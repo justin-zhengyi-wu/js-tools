@@ -46,7 +46,7 @@ function deepEquals(o1, o2, strictMode) {
     }
 
     if (keys1.length !== keys2.length) {
-        logger.error("The numbers of keys do not match. Expected keys are ["
+        console.log("The numbers of keys do not match. Expected keys are ["
                 + keys1 + "], but [" + keys2 + "] found.");
         return false;
     }
@@ -56,7 +56,7 @@ function deepEquals(o1, o2, strictMode) {
             return deepEquals(o1[k], o2[k]);
         } else {
             if (o1[k] != o2[k]) {
-                logger.error("The values of \"" + k
+                console.log("The values of \"" + k
                         + "\" do not match, expected value is " + o1[k]
                         + ", but " + o2[k] + " found.");
                 return false;
