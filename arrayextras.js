@@ -1,5 +1,4 @@
 
-
 // Mozilla 1.8 has support for indexOf, lastIndexOf, forEach, filter, map, some, every
 // http://developer-test.mozilla.org/docs/Core_JavaScript_1.5_Reference:Objects:Array:lastIndexOf
 if (!Array.prototype.indexOf) {
@@ -124,4 +123,49 @@ Array.prototype.remove = function (obj) {
 	var i = this.indexOf(obj);
 	if (i != -1)
 		this.splice(i, 1);
+};
+
+/**
+ * Add the elements of array that passed in to existing array.
+ * @param arr the array to be merged into.
+ * @return The existing array that with elements of both two arrays without duplicats.
+ */
+Array.prototype.mergeArray = function(arr) {
+    var result = this;
+    arr.forEach(function(obj, index) {
+        if (result.indexOf(obj) === -1) {
+            result.push(obj);
+        }
+    });
+    return result;
+};
+
+/**
+ * Subtract the elements in array that passed in from existing array.
+ * @param arr The array that contains the elements that need to be subtracted from existing array.
+ * @return The existing array with elements excluding elements of array that passed in.
+ */
+Array.prototype.subtractArray = function(arr) {
+    return this.filter(function(obj, index) {
+        if (arr.indexOf(obj) === -1) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+};
+
+/**
+ * Intersect two arrays
+ * @param arr The array passed in.
+ * @return The existing array with elements only both in two arrays.
+ */
+Array.prototype.intersectionArray = function(arr) {
+    return this.filter(function(obj, index) {
+        if (arr.indexOf(obj) !== -1) {
+            return true;
+        } else {
+            return false;
+        }
+    });
 };
