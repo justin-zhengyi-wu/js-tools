@@ -16,7 +16,8 @@ function setCookie(name, value, expires, path, domain, secure) {
 }
 
 function getCookie(name) {
-    var regexStr = "(?:; )?" + name + "=([^;]*);?";
+    // var regexStr = "(?:; )?" + name + "=([^;]*);?";
+    var regexStr = "(?:^| )" + name + "=([^;]*)(;|$)";
     var regex = new RegExp(regexStr);
     if (regex.test(document.cookie)) {
         return decodeURIComponent(RegExp.$1);
