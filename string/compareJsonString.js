@@ -53,7 +53,7 @@ function deepEquals(o1, o2, strictMode) {
 
     return keys1.every(function(k) {
         if (typeof o1[k] == "object" && typeof o2[k] == "object") {
-            return deepEquals(o1[k], o2[k]);
+            return deepEquals(o1[k], o2[k], strictMode);
         } else {
             if (o1[k] != o2[k]) {
                 console.log("The values of \"" + k
