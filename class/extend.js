@@ -8,3 +8,4 @@ function extend(subClass, superClass) {
         superClass.prototype.constructor = superClass;
     }
 }
+// http://stackoverflow.com/questions/12691020/why-javascripts-extend-function-has-to-set-objects-prototypes-constructor-pro
